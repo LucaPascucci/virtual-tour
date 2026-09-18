@@ -54,6 +54,8 @@
 
 * { box-sizing: border-box; }
 
+[hidden] { display: none !important; }
+
 html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 
 body {
@@ -220,6 +222,10 @@ section.alternata { background: var(--superficie); border-block: 1px solid var(-
 .passi p { color: var(--testo-tenue); font-size: .95rem; }
 
 /* tour pubblicati */
+/* Nascosta la sezione, "Il servizio" e "Contatti" diventano adiacenti: i loro
+   due bordi si sommerebbero in una riga doppia. */
+#tour[hidden] + .alternata { border-top: 0; }
+
 .tour { padding: 0; overflow: hidden; }
 .tour img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
 .tour .testo { display: flex; flex-direction: column; flex: 1; padding: 20px 24px; }
@@ -227,11 +233,6 @@ section.alternata { background: var(--superficie); border-block: 1px solid var(-
 .tour .luogo { font-size: .85rem; color: var(--testo-tenue); margin-bottom: 10px; }
 .tour .apri { margin-top: auto; padding-top: 14px; font-weight: 600; text-decoration: none; }
 .tour .apri::after { content: " →"; }
-
-.vuoto {
-  border: 1px dashed var(--bordo); border-radius: var(--raggio);
-  padding: 48px 24px; text-align: center; color: var(--testo-tenue);
-}
 
 .elenco-fonti { margin: 0; padding-left: 20px; font-size: .9rem; color: var(--testo-tenue); }
 .elenco-fonti li { margin-bottom: 8px; }

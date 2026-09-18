@@ -33,7 +33,7 @@
       <a href="#vantaggi">Perché conviene</a>
       <a href="#settori">Dove si usa</a>
       <a href="#servizio">Il servizio</a>
-      <a href="#tour">Tour pubblicati</a>
+      <a href="#tour" hidden data-solo-con-tour>Tour pubblicati</a>
       <a class="bottone piccolo" href="#contatti">Contatti</a>
     </nav>
   </div>
@@ -54,7 +54,7 @@
         </p>
         <p class="azioni">
           <a class="bottone" href="#contatti">Richiedi un preventivo</a>
-          <a class="bottone secondario" href="#tour">Guarda i tour pubblicati</a>
+          <a class="bottone secondario" href="#tour" hidden data-solo-con-tour>Guarda i tour pubblicati</a>
         </p>
       </div>
       <figure class="incorniciata">
@@ -328,18 +328,15 @@
   </section>
 
   <!-- ===================== TOUR PUBBLICATI ===================== -->
-  <!-- Le schede sono generate da assets/tours.js leggendo assets/tours.json.
-       Per aggiungere un tour si modifica solo il JSON: vedi README.md. -->
-  <section id="tour">
+  <!-- Tutto ciò che porta qui è marcato data-solo-con-tour e resta nascosto
+       finché assets/tours.json non contiene almeno un tour: lo scopre
+       assets/tours.js. Per pubblicare si modifica solo il JSON, vedi README.md. -->
+  <section id="tour" hidden data-solo-con-tour>
     <div class="riga">
       <h2>Tour pubblicati</h2>
       <p class="introduzione">Alcuni degli spazi già navigabili online.</p>
 
       <div id="elenco-tour" class="griglia"></div>
-
-      <p id="tour-vuoto" class="vuoto" hidden>
-        I primi tour pubblicati compariranno qui.
-      </p>
     </div>
   </section>
 
@@ -352,8 +349,8 @@
         e quanto costa.
       </p>
       <p class="azioni">
-        <a class="bottone" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour">Scrivimi una mail</a>
-        <a class="bottone secondario" href="tel:+393398469039">339 8469039</a>
+        <a class="bottone" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A">Scrivimi una mail</a>
+        <a class="bottone secondario" href="https://wa.me/qr/QGXTK7OWWIK5F1" target="_blank" rel="noopener">Contattami su WhatsApp</a>
       </p>
     </div>
   </section>
@@ -391,9 +388,9 @@
     <div>
       <p class="nome">Luca Pascucci</p>
       <p class="recapiti">
-        <a href="tel:+393398469039">339 8469039</a>
+        <a href="https://wa.me/qr/QGXTK7OWWIK5F1" target="_blank" rel="noopener">Contattami su WhatsApp</a>
         <span aria-hidden="true">·</span>
-        <a href="mailto:lucapascucci19@gmail.com">lucapascucci19@gmail.com</a>
+        <a href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A">lucapascucci19@gmail.com</a>
       </p>
       <p class="ruolo">Realizzazione e pubblicazione di virtual tour 360°</p>
     </div>

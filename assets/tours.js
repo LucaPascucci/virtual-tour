@@ -1,21 +1,21 @@
 /* Costruisce le schede della sezione "Tour pubblicati" leggendo tours.json.
-   Per aggiungere o togliere un tour si modifica solo tours.json: qui non serve
-   mettere le mani. */
+   Tutto ciò che rimanda alla sezione — la sezione stessa, la voce di menu, il
+   bottone dell'apertura — è marcato data-solo-con-tour nell'HTML e resta nascosto
+   finché il JSON non contiene almeno un tour: per pubblicare si modifica solo
+   tours.json, qui non serve mettere le mani. */
 
 const elenco = document.querySelector('#elenco-tour');
-const messaggioVuoto = document.querySelector('#tour-vuoto');
+const soloConTour = document.querySelectorAll('[data-solo-con-tour]');
 
 fetch('assets/tours.json')
   .then((risposta) => risposta.json())
   .then(disegna)
-  .catch(() => mostraMessaggio('Elenco dei tour non disponibile.'));
+  .catch(ignora);
 
 function disegna(tours) {
-  if (!Array.isArray(tours) || tours.length === 0) {
-    mostraMessaggio();
-    return;
-  }
+  if (!Array.isArray(tours) || tours.length === 0) return;
   elenco.innerHTML = tours.map(scheda).join('');
+  soloConTour.forEach((elemento) => { elemento.hidden = false; });
 }
 
 function scheda(tour) {
@@ -39,7 +39,6 @@ function pulisci(valore) {
   return String(valore ?? '').replace(/[&<>"]/g, (carattere) => sostituzioni[carattere]);
 }
 
-function mostraMessaggio(testoAlternativo) {
-  if (testoAlternativo) messaggioVuoto.textContent = testoAlternativo;
-  messaggioVuoto.hidden = false;
-}
+/* JSON mancante o malformato: resta tutto nascosto, la pagina non cambia.
+   Meglio una sezione in meno che un messaggio d'errore a un potenziale cliente. */
+function ignora() {}
