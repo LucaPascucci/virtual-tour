@@ -8,8 +8,38 @@ sono numeri nudi, senza prefisso `v`.
 
 ## [Unreleased]
 
+## [0.0.2] - 2026-09-18
+
+### Added
+
+- Nuova sezione "Cosa serve da te", tra "Come si realizza" e i tour pubblicati:
+  quattro passi che dicono al cliente quanto tempo e quale preparazione gli
+  costa il virtual tour dopo l'ordine, e una riga di chiusura — nessun canone,
+  nessun aggiornamento, niente da gestire. La voce è anche nel menu in testata.
+- I due contatti hanno la loro icona — il segno di WhatsApp e una busta — in
+  tutti e tre i punti in cui compaiono: la sezione "Parliamone", il piede e la
+  barra fissa. Nella barra l'icona ha preso il posto della scritta, così la
+  pillola entra comoda anche sugli schermi da 320px.
+- Una barra sempre presente a fondo schermo, "Contattami" e i due recapiti con
+  WhatsApp in evidenza: una pillola centrata, staccata dai bordi e in rilievo
+  sulla pagina.
+- Il ritratto accanto al nome, in testata e nel piede.
+- `assets/menu.js`, le poche righe che aprono e chiudono il menu sugli schermi
+  stretti, e `assets/schede.js`, quelle che decidono se le schede apribili
+  partono aperte o chiuse.
+- `CHANGELOG.md`, questo file.
+- `.claude/rules/` con architettura, convenzioni, gotchas e workflow git.
+- Sezioni "Contatti sulla pagina", "Come si comporta da telefono", "Versioni" e
+  "Documentazione per Claude Code" nel `README.md`.
+
 ### Changed
 
+- Le schede di "Perché conviene" e "Dove si usa" si aprono e si chiudono una per
+  una, con lo stesso blocco `.richiudibile` di "Fonti" e della nota di
+  trasparenza. Su schermo largo arrivano aperte; da telefono partono chiuse, così
+  le due sezioni si leggono a colpo d'occhio invece di essere un muro di testo.
+  Lo stato di partenza lo decide `assets/schede.js`: senza JavaScript restano
+  tutte aperte, come prima.
 - Su schermi stretti il menu delle sezioni si raccoglie in un bottone a tre
   tratti e si apre in colonna sotto il marchio; aperto, il bottone diventa una
   X. La testata torna a restare in alto anche da telefono, così il menu è
@@ -46,19 +76,6 @@ sono numeri nudi, senza prefisso `v`.
   `@` i file specializzati sotto `.claude/rules/` (architettura, convenzioni,
   gotchas, workflow git).
 
-### Added
-
-- Una barra sempre presente a fondo schermo, "Contattami" e i due recapiti con
-  WhatsApp in evidenza: una pillola centrata, staccata dai bordi e in rilievo
-  sulla pagina.
-- Il ritratto accanto al nome, in testata e nel piede.
-- `assets/menu.js`, le poche righe che aprono e chiudono il menu sugli schermi
-  stretti.
-- `CHANGELOG.md`, questo file.
-- `.claude/rules/` con architettura, convenzioni, gotchas e workflow git.
-- Sezioni "Contatti sulla pagina", "Versioni" e "Documentazione per Claude Code"
-  nel `README.md`.
-
 ### Removed
 
 - Il messaggio "I primi tour pubblicati compariranno qui" e la classe `.vuoto`
@@ -83,5 +100,6 @@ sono numeri nudi, senza prefisso `v`.
 - Tema chiaro e tema scuro che seguono le impostazioni del sistema operativo.
 - Pubblicazione su GitHub Pages dal branch `main`, cartella `/ (root)`.
 
-[Unreleased]: https://github.com/LucaPascucci/virtual-tour/compare/0.0.1...HEAD
+[Unreleased]: https://github.com/LucaPascucci/virtual-tour/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/LucaPascucci/virtual-tour/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/LucaPascucci/virtual-tour/releases/tag/0.0.1

@@ -7,9 +7,9 @@ introdurre nomi in inglese.
 
 | dove | esempi |
 |------|--------|
-| classi CSS | `.riga`, `.scheda`, `.apertura`, `.alternata`, `.due-colonne`, `.occhiello` |
+| classi CSS | `.riga`, `.scheda`, `.apertura`, `.alternata`, `.richiudibile`, `.apribili`, `.passi`, `.solo-icona` |
 | variabili CSS | `--verde-600`, `--testo-tenue`, `--anello-focus`, `--superficie` |
-| identificatori JS | `disegna`, `pulisci`, `scheda`, `elenco`, `soloConTour` |
+| identificatori JS | `disegna`, `pulisci`, `scheda`, `elenco`, `soloConTour`, `bottoneMenu`, `aperto` |
 | attributi dati | `data-solo-con-tour` |
 | campi JSON | `titolo`, `luogo`, `descrizione`, `immagine`, `link` |
 

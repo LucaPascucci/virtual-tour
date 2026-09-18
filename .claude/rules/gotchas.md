@@ -22,6 +22,8 @@
 - **Il menu aperto non ha un `display` suo**: lo accende il selettore
   `.apri-menu[aria-expanded="true"] + nav`, quindi la `<nav>` deve restare il
   fratello subito successivo al bottone.
+- **`.griglia.apribili` vale `align-items: start`.** Senza, chiudendo una
+  scheda il suo riquadro resterebbe alto quanto la scheda aperta accanto.
 - **Lo spazio sotto la barra fissa sta sul piede**, non sul `body`: sul `body`
   diventerebbe una striscia del colore della pagina sotto il piede scuro.
 - **Un colore nuovo va definito due volte**, nella lista chiara e in quella
@@ -35,6 +37,9 @@
 - **`pulisci()` non è decorativo.** I valori di `tours.json` finiscono dentro
   l'HTML via template string: ogni nuovo campo interpolato va passato da
   `pulisci()`.
+- **Le schede apribili partono aperte dall'HTML.** `assets/schede.js` le
+  chiude sotto gli 860px, una volta sola al caricamento: se l'`open` stesse
+  nel JS invece che nell'HTML, senza JavaScript resterebbero tutte chiuse.
 - **`soloConTour` è catturato una volta sola** all'avvio, con
   `querySelectorAll`. Un rimando aggiunto al DOM dopo il caricamento non verrebbe
   scoperto.
@@ -44,6 +49,10 @@
 - **`&` va scritto `&amp;` negli attributi `href`.** I `mailto:` dei contatti
   hanno `subject` e `body`: la `&` che li separa è scritta `&amp;`. Copiandola
   come `&` il corpo della mail si perde.
+- **Le icone vivono di rimando.** Il blocco `ICONE` in cima al `<body>` è
+  `<svg hidden>`: spostandolo o togliendolo i sei `<use>` smettono di disegnare
+  qualcosa, senza errori in console. Un'icona nuova si aggiunge lì, come
+  `<symbol>` con il suo `id`.
 - **`og:image` è l'unico URL assoluto** della pagina: cambiando dominio è
   l'unica riga da aggiornare a mano.
 - **Rinominare l'`id` di una sezione** significa aggiornare anche il link

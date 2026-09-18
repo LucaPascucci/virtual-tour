@@ -5,9 +5,11 @@ Vedi @README.md per la panoramica del progetto.
 
 ## Cos'è
 
-Sito vetrina statico (una pagina) per il servizio di virtual tour 360°. Tre file
-sorgente — `index.html`, `assets/style.css`, `assets/tours.js` — più
-`assets/tours.json` come unico file di dati.
+Sito vetrina statico (una pagina) per il servizio di virtual tour 360°:
+`index.html`, `assets/style.css` e tre script brevi e indipendenti —
+`assets/tours.js` (schede dei tour), `assets/menu.js` (menu sugli schermi
+stretti), `assets/schede.js` (stato di partenza delle schede apribili). Il solo
+file di dati è `assets/tours.json`.
 
 ## Comandi
 
@@ -35,6 +37,10 @@ Non esistono test, lint o build. La verifica è aprire la pagina e guardarla.
   `@media (prefers-color-scheme: dark)`.
 - IMPORTANT: **percorsi relativi ovunque**. L'unico URL assoluto è `og:image`
   in `index.html`, da aggiornare a mano se il sito cambia dominio.
+- IMPORTANT: **la pagina deve restare leggibile senza JavaScript**. Le schede
+  apribili portano `open` nell'HTML e `schede.js` le chiude solo sotto gli
+  860px; i rimandi ai tour sono l'eccezione voluta, nascosti finché il JSON
+  non contiene un tour.
 
 ## Documentazione dettagliata
 
