@@ -34,6 +34,9 @@ sono numeri nudi, senza prefisso `v`.
 
 ### Changed
 
+- La sezione "Cosa serve da te" si chiama ora "Quanto ti impegna", in pagina e
+  nel menu, e parla al cliente con un tono più vicino: il suo tempo vale, gliene
+  si chiede il meno possibile, il tour va online quando dice lui.
 - Le schede di "Perché conviene" e "Dove si usa" si aprono e si chiudono una per
   una, con lo stesso blocco `.richiudibile` di "Fonti" e della nota di
   trasparenza. Su schermo largo arrivano aperte; da telefono partono chiuse, così

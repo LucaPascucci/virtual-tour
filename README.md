@@ -128,7 +128,7 @@ git tag 0.0.2 && git push --tags
 ## Modificare i testi
 
 Le sezioni di `index.html` sono separate da commenti in maiuscolo
-(`APERTURA`, `COS'È`, `PERCHÉ CONVIENE`, `COSA SERVE DA TE`, …): si cerca il
+(`APERTURA`, `COS'È`, `PERCHÉ CONVIENE`, `QUANTO TI IMPEGNA`, …): si cerca il
 commento e si modifica il testo sotto. I colori stanno tutti nelle variabili in
 cima a `assets/style.css`, sotto `1. Variabili`; il tema scuro è la seconda
 lista di variabili e segue le impostazioni del sistema operativo di chi visita.

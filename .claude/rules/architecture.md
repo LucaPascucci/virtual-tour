@@ -18,7 +18,7 @@ repository è esattamente ciò che viene pubblicato.
 ## index.html
 
 Le sezioni sono delimitate da commenti in maiuscolo — `APERTURA`, `TRE NUMERI`,
-`COS'È`, `PERCHÉ CONVIENE`, `DOVE SI USA`, `IL SERVIZIO`, `COSA SERVE DA TE`,
+`COS'È`, `PERCHÉ CONVIENE`, `DOVE SI USA`, `IL SERVIZIO`, `QUANTO TI IMPEGNA`,
 `TOUR PUBBLICATI`, `CONTATTI`, `FONTI`, `BARRA FISSA`. Per modificare un testo
 si cerca il commento. `ICONE` sta prima della testata e non è una sezione: è il
 blocco di definizioni delle due icone dei contatti.
@@ -29,7 +29,7 @@ chiusi mostrano solo il titolo dentro `<summary>`.
 `BARRA FISSA` sta fuori da `<main>`, subito prima degli script: è la pillola
 sempre visibile a fondo schermo con i due contatti.
 
-`COME SI REALIZZA` (id `#servizio`) e `COSA SERVE DA TE` (id `#impegno`) sono due
+`COME SI REALIZZA` (id `#servizio`) e `QUANTO TI IMPEGNA` (id `#impegno`) sono due
 elenchi `<ol class="passi">`: i numeri li disegna il CSS con un `counter`, non
 l'elenco. La prima dice cosa faccio io, la seconda cosa serve al cliente.
 
