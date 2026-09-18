@@ -131,7 +131,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .bottone {
-  display: inline-block;
+  display: inline-flex; align-items: center; gap: 10px;
   background: var(--primario); color: var(--su-primario);
   padding: 13px 24px; border-radius: 10px;
   font-weight: 600; text-decoration: none;
@@ -143,6 +143,15 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .bottone.secondario:hover { border-color: var(--primario); color: var(--primario); }
 .bottone.piccolo { padding: 8px 16px; font-size: .95rem; }
+/* Il nome del canale resta nell'aria-label: il bottone si riduce a un tondo.
+   Lo usa la barra fissa, dove sotto i 320px non entrerebbe anche la scritta. */
+.bottone.solo-icona { padding: 9px; }
+.bottone.solo-icona .icona { width: 20px; height: 20px; }
+
+/* Le icone dei contatti: i disegni stanno in cima a index.html, qui c'è solo
+   la misura. Il colore lo prendono dal testo che le contiene, quindi non
+   hanno variabili proprie e seguono i due temi da sole. */
+.icona { width: 1.15em; height: 1.15em; fill: currentColor; flex: none; }
 
 .azioni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .riga.centrata .azioni { justify-content: center; }
@@ -183,6 +192,17 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .richiudibile[open] summary { margin-bottom: 24px; }
 .richiudibile[open] summary::after { margin-top: 4px; transform: rotate(-135deg); }
+
+/* Le schede di "Perché conviene" e "Dove si usa" usano lo stesso blocco: partono
+   aperte dall'HTML e le chiude assets/schede.js sugli schermi stretti. */
+.griglia.apribili { align-items: start; }   /* chiusa, la scheda si stringe davvero */
+.scheda.richiudibile[open] summary { margin-bottom: 14px; }
+/* al passaggio del mouse il titolo cambia colore insieme alla freccia */
+.scheda.richiudibile summary:hover h3 { color: inherit; }
+/* Nelle schede la freccia sta sempre in fondo alla riga, non attaccata al
+   titolo: i titoli hanno lunghezze diverse e le frecce si allineerebbero a
+   caso da una scheda all'altra. */
+.scheda.richiudibile summary::after { margin-left: auto; flex: none; }
 
 figure { margin: 0; }
 figure img { border-radius: var(--raggio); }
@@ -306,8 +326,17 @@ section.alternata { background: var(--superficie); border-block: 1px solid var(-
 .piede .identita { display: flex; align-items: center; gap: 20px; }
 .piede .identita img { width: 84px; height: 84px; }
 .piede .nome { font-size: 1.35rem; font-weight: 700; margin-bottom: 4px; }
-.piede .recapiti { margin-bottom: 6px; }
-.piede .recapiti a { color: var(--verde-300); }
+.piede .recapiti {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+  margin-bottom: 6px;
+}
+/* L'indirizzo è una parola sola e lunga: con l'icona davanti, al minimo delle
+   larghezze deve poter andare a capo o sporgerebbe dal piede. */
+.piede .recapiti a {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-width: 0; overflow-wrap: anywhere;
+  color: var(--verde-300);
+}
 .piede .ruolo { font-size: .9rem; color: var(--verde-300); opacity: .8; margin: 0; }
 
 .piede .badge { display: flex; align-items: center; gap: 20px; }

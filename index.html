@@ -22,6 +22,21 @@
 
 <a class="salta" href="#contenuto">Vai al contenuto</a>
 
+<!-- ===================== ICONE ===================== -->
+<!-- Definite qui una volta sola e richiamate con <use href="#icona-...">: le due
+     icone compaiono nella sezione "Parliamone", nel piede e nella barra fissa.
+     Prendono il colore dal testo che le contiene, quindi non hanno variabili
+     proprie e funzionano nei due temi. -->
+<svg hidden aria-hidden="true">
+  <symbol id="icona-whatsapp" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+  </symbol>
+  <symbol id="icona-mail" viewBox="0 0 24 24">
+    <path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v.35l-10 5.5-10-5.5Z"/>
+    <path d="M2 8.63 11.52 13.87a1 1 0 0 0 .96 0L22 8.63V18a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2Z"/>
+  </symbol>
+</svg>
+
 <header class="testata">
   <div class="riga">
     <a class="marchio" href="#contenuto">
@@ -39,6 +54,7 @@
       <a href="#vantaggi">Perché conviene</a>
       <a href="#settori">Dove si usa</a>
       <a href="#servizio">Il servizio</a>
+      <a href="#impegno">Cosa serve da te</a>
       <a href="#tour" hidden data-solo-con-tour>Tour pubblicati</a>
       <a class="bottone piccolo" href="#contatti">Contattami</a>
     </nav>
@@ -129,20 +145,20 @@
   <section id="vantaggi" class="alternata">
     <div class="riga">
       <h2>Perché conviene</h2>
-      <div class="griglia">
+      <div class="griglia apribili">
 
-        <article class="scheda">
-          <h3>Chi ti cerca decide online, prima di contattarti</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Chi ti cerca decide online, prima di contattarti</h3></summary>
           <p>
             Il <strong>76%</strong> di chi cerca da smartphone un'attività “nelle vicinanze”
             la visita entro un giorno, e il <strong>28%</strong> di quelle ricerche si
             conclude con un acquisto.
           </p>
           <p class="fonte">Think with Google, 2016</p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>Google premia le schede complete</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Google premia le schede complete</h3></summary>
           <p>
             Le attività che aggiungono foto al profilo ricevono <strong>+42%</strong> di
             richieste di indicazioni stradali e <strong>+35%</strong> di clic al sito;
@@ -150,38 +166,38 @@
             che mostra le proprie foto.
           </p>
           <p class="fonte">Google, playbook Business Profile 2026</p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>Contatti più qualificati, meno tempo perso</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Contatti più qualificati, meno tempo perso</h3></summary>
           <p>
             Chi ha già visto lo spazio e decide comunque di chiamarti è davvero
             interessato: meno visite a vuoto, meno telefonate per informazioni ovvie,
             meno trattative che si fermano alla prima occhiata.
           </p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>Più fiducia, meno aspettative sbagliate</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Più fiducia, meno aspettative sbagliate</h3></summary>
           <p>
             Un ambiente visitabile per intero rassicura più di dieci foto scelte con cura,
             perché comunica che non c'è nulla da nascondere. E trasmette l'atmosfera, che
             è esattamente ciò che una foto piatta non riesce a dare.
           </p>
           <p class="fonte">TheFork, 2026: il 33% degli italiani sceglie il locale valutando foto, menu e atmosfera</p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>È un asset, non una campagna</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>È un asset, non una campagna</h3></summary>
           <p>
             Si realizza una volta e resta utilizzabile per anni su sito, portali, Google,
             email, social e materiale stampato. A differenza della pubblicità,
             <strong>non consuma budget ogni mese</strong>.
           </p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>In molti settori è ancora un elemento di distinzione</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>In molti settori è ancora un elemento di distinzione</h3></summary>
           <p>
             Il <strong>54%</strong> degli event planner europei si aspetta di trovare un
             tour 3D quando valuta una location, ma solo il <strong>18%</strong> dei musei
@@ -189,7 +205,7 @@
             ha un vantaggio.
           </p>
           <p class="fonte">Cvent / Censuswide, 2023-2024 · ISTAT, 2022</p>
-        </article>
+        </details>
 
       </div>
     </div>
@@ -204,10 +220,10 @@
         settore, il dato che lo giustifica.
       </p>
 
-      <div class="griglia">
+      <div class="griglia apribili">
 
-        <article class="scheda">
-          <h3>Hotel, B&amp;B e agriturismi</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Hotel, B&amp;B e agriturismi</h3></summary>
           <p>
             In Italia il <strong>63,7%</strong> dei pernottamenti arriva dal canale diretto
             e metà dei viaggiatori italiani inizia la ricerca da un motore di ricerca.
@@ -215,20 +231,20 @@
             <strong>15% al 23%</strong> di commissione risparmiata.
           </p>
           <p class="fonte">HOTREC / HES-SO Valais, 2024 · AGCM, provvedimento A558, 2024</p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>Ristoranti</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Ristoranti</h3></summary>
           <p>
             Il <strong>33%</strong> degli italiani over 25 sceglie il locale valutando
             personalmente foto, menu e atmosfera. Le schede ristorante con foto registrano
             <strong>+73%</strong> di engagement, <strong>+107%</strong> oltre le 35 immagini.
           </p>
           <p class="fonte">TheFork, 2026 · TripAdvisor, 2014</p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>Sale eventi e wedding venue</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Sale eventi e wedding venue</h3></summary>
           <p>
             Il <strong>54%</strong> degli event planner europei si aspetta di trovare un
             tour 3D. In Italia si celebrano <strong>16.700</strong> matrimoni di coppie
@@ -236,20 +252,20 @@
             delle coppie non può fare il sopralluogo.
           </p>
           <p class="fonte">Cvent / Censuswide, 2023-2024 · Convention Bureau Italia, dati 2025</p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>Showroom e concessionarie</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Showroom e concessionarie</h3></summary>
           <p>
             Chi acquista un'auto passa <strong>6 ore e 31 minuti</strong> online contro
             2 ore e 55 in concessionaria, e il sito del venditore è il primo punto di
             contatto per il <strong>72%</strong> degli acquirenti.
           </p>
           <p class="fonte">Cox Automotive, 2024 Car Buyer Journey Study</p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>Industria e B2B</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Industria e B2B</h3></summary>
           <p>
             Il <strong>61%</strong> dei buyer B2B preferisce informarsi senza passare da un
             venditore, e il <strong>69%</strong> riscontra incoerenze tra sito e forza
@@ -257,17 +273,17 @@
             internazionale, oltre <strong>2.000 $</strong>.
           </p>
           <p class="fonte">Gartner, 2025 · Booking.com for Business, 2024</p>
-        </article>
+        </details>
 
-        <article class="scheda">
-          <h3>Musei e luoghi culturali</h3>
+        <details class="scheda richiudibile" open>
+          <summary><h3>Musei e luoghi culturali</h3></summary>
           <p>
             Solo il <strong>18%</strong> dei musei italiani offre un tour virtuale, il
             13,7% nelle Aree Interne. Intanto l'offerta culturale è il primo fattore nella
             scelta della destinazione per il <strong>44%</strong> degli europei.
           </p>
           <p class="fonte">ISTAT, 2022 e 2025 · Eurobarometro Flash 499, 2021</p>
-        </article>
+        </details>
 
       </div>
     </div>
@@ -334,6 +350,56 @@
     </div>
   </section>
 
+  <!-- ===================== COSA SERVE DA TE ===================== -->
+  <section id="impegno">
+    <div class="riga">
+      <h2>Cosa serve da te</h2>
+      <p class="introduzione">
+        Poco, e quasi tutto in un pomeriggio solo. Il resto lo faccio io.
+      </p>
+
+      <ol class="passi">
+        <li>
+          <h3>Mezz'ora per decidere insieme</h3>
+          <p>
+            Mi racconti lo spazio e decidiamo quali ambienti entrano nel tour e
+            quanti punti di ripresa servono.
+          </p>
+        </li>
+        <li>
+          <h3>Lo spazio in ordine, come per una foto</h3>
+          <p>
+            È la parte che chiede più attenzione: ambienti sgombri, luci accese,
+            niente scatoloni o cartelli provvisori. Quello che si vede nel tour
+            resta lì per anni.
+          </p>
+        </li>
+        <li>
+          <h3>Qualche ora il giorno della ripresa</h3>
+          <p>
+            Serve qualcuno che apra e accompagni. Si sceglie l'orario in cui lo
+            spazio è più libero: durante gli scatti gli ambienti vanno vuoti.
+          </p>
+        </li>
+        <li>
+          <h3>Un'occhiata prima della pubblicazione</h3>
+          <p>
+            Ti mando il tour finito, mi dici se qualcosa non va, lo sistemo.
+            Poi va online.
+          </p>
+        </li>
+      </ol>
+
+      <div class="riquadro">
+        <p>
+          <strong>E dopo, niente.</strong> Nessun canone, nessun aggiornamento,
+          nessuna app da gestire. Il tour resta online e si rifà solo se cambi
+          lo spazio.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== TOUR PUBBLICATI ===================== -->
   <!-- Tutto ciò che porta qui è marcato data-solo-con-tour e resta nascosto
        finché assets/tours.json non contiene almeno un tour: lo scopre
@@ -356,8 +422,8 @@
         e quanto costa.
       </p>
       <p class="azioni">
-        <a class="bottone" href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener">Contattami su WhatsApp</a>
-        <a class="bottone secondario" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A">Scrivimi una mail</a>
+        <a class="bottone" href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener"><svg class="icona" aria-hidden="true"><use href="#icona-whatsapp"></use></svg>Contattami su WhatsApp</a>
+        <a class="bottone secondario" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A"><svg class="icona" aria-hidden="true"><use href="#icona-mail"></use></svg>Scrivimi una mail</a>
       </p>
     </div>
   </section>
@@ -399,9 +465,9 @@
       <div>
         <p class="nome">Luca Pascucci</p>
         <p class="recapiti">
-          <a href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener"><svg class="icona" aria-hidden="true"><use href="#icona-whatsapp"></use></svg>WhatsApp</a>
           <span aria-hidden="true">·</span>
-          <a href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A">lucapascucci19@gmail.com</a>
+          <a href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A"><svg class="icona" aria-hidden="true"><use href="#icona-mail"></use></svg>lucapascucci19@gmail.com</a>
         </p>
         <p class="ruolo">Realizzazione e pubblicazione di virtual tour 360°</p>
       </div>
@@ -416,11 +482,12 @@
 <!-- ===================== BARRA FISSA ===================== -->
 <div class="barra-fissa">
   <p class="invito">Contattami</p>
-  <a class="bottone secondario piccolo" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A" aria-label="Scrivimi una mail">Mail</a>
-  <a class="bottone piccolo" href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener" aria-label="Contattami su WhatsApp">WhatsApp</a>
+  <a class="bottone secondario piccolo solo-icona" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A" aria-label="Scrivimi una mail"><svg class="icona" aria-hidden="true"><use href="#icona-mail"></use></svg></a>
+  <a class="bottone piccolo solo-icona" href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener" aria-label="Contattami su WhatsApp"><svg class="icona" aria-hidden="true"><use href="#icona-whatsapp"></use></svg></a>
 </div>
 
 <script src="assets/tours.js" defer></script>
 <script src="assets/menu.js" defer></script>
+<script src="assets/schede.js" defer></script>
 </body>
 </html>
