@@ -17,8 +17,13 @@
 - **`#tour[hidden] + .alternata { border-top: 0; }`.** Nascosta la sezione tour,
   "Il servizio" e "Contatti" diventano adiacenti e i loro due bordi si
   sommerebbero in una riga doppia.
-- **`scroll-padding-top: 88px`** compensa la testata fissa; su schermi stretti
-  la testata non è più sticky e il valore scende a `12px` (blocco 7).
+- **`scroll-padding-top: 88px`** compensa la testata, che resta in alto a ogni
+  larghezza.
+- **Il menu aperto non ha un `display` suo**: lo accende il selettore
+  `.apri-menu[aria-expanded="true"] + nav`, quindi la `<nav>` deve restare il
+  fratello subito successivo al bottone.
+- **Lo spazio sotto la barra fissa sta sul piede**, non sul `body`: sul `body`
+  diventerebbe una striscia del colore della pagina sotto il piede scuro.
 - **Un colore nuovo va definito due volte**, nella lista chiara e in quella
   scura. Definirlo una sola volta rompe silenziosamente l'altro tema.
 

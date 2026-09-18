@@ -10,6 +10,7 @@ nel repository sono esattamente quelli che vengono pubblicati.
 index.html            la pagina, divisa in sezioni commentate
 assets/style.css      unico foglio di stile, con la palette in cima
 assets/tours.js       costruisce le schede della sezione "Tour pubblicati"
+assets/menu.js        apre e chiude il menu sugli schermi stretti
 assets/tours.json     l'elenco dei tour: è l'unico file da aggiornare nel tempo
 img/                  immagini e favicon
 img/tour/             le anteprime dei tour pubblicati
@@ -77,13 +78,17 @@ sposta su un dominio proprio.
 
 ## Contatti sulla pagina
 
-Due canali, ripetuti nella sezione "Contatti" e nel piede di `index.html`:
+Due canali, ripetuti nella sezione "Contatti", nel piede e nella barra sempre
+visibile a fondo schermo di `index.html`. WhatsApp è il canale preferito: dove
+compaiono entrambi è il bottone pieno e sta per primo.
 
 - una mail con oggetto e corpo già precompilati (`mailto:` con `subject` e
   `body`), così chi scrive trova la traccia delle domande utili;
-- un link a WhatsApp (`wa.me`), che si apre in una scheda nuova.
+- un link a WhatsApp (`wa.me/<numero>?text=`), che si apre in una scheda nuova
+  con la stessa traccia di domande già scritta. Il testo precompilato vuole il
+  numero: con un link `/qr/` WhatsApp lo ignora.
 
-Cambiando indirizzo o numero vanno aggiornate entrambe le occorrenze. Negli
+Cambiando indirizzo o numero vanno aggiornate tutte le occorrenze. Negli
 `href` la `&` che separa `subject` e `body` va scritta `&amp;`: scritta come `&`
 il corpo della mail si perde.
 

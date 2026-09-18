@@ -25,16 +25,22 @@
 <header class="testata">
   <div class="riga">
     <a class="marchio" href="#contenuto">
-      <strong>Luca Pascucci</strong>
-      <span>Virtual tour 360°</span>
+      <img src="img/luca-pascucci.jpg" alt="Luca Pascucci" width="511" height="512">
+      <span class="testo">
+        <strong>Luca Pascucci</strong>
+        <span>Virtual tour 360°</span>
+      </span>
     </a>
-    <nav aria-label="Sezioni del sito">
+    <button class="apri-menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <span class="tratti" aria-hidden="true"></span>
+    </button>
+    <nav id="menu" aria-label="Sezioni del sito">
       <a href="#cos-e">Cos'è</a>
       <a href="#vantaggi">Perché conviene</a>
       <a href="#settori">Dove si usa</a>
       <a href="#servizio">Il servizio</a>
       <a href="#tour" hidden data-solo-con-tour>Tour pubblicati</a>
-      <a class="bottone piccolo" href="#contatti">Contatti</a>
+      <a class="bottone piccolo" href="#contatti">Contattami</a>
     </nav>
   </div>
 </header>
@@ -304,8 +310,8 @@
           </p>
         </div>
 
-        <div>
-          <h3>Una nota di trasparenza</h3>
+        <details class="richiudibile">
+          <summary><h3>Una nota di trasparenza</h3></summary>
           <p class="nota">
             Nel settore circolano statistiche che non reggono a una verifica: “+30% di
             prenotazioni”, “cinque volte più tempo sul sito”, “−40% di visite inutili”.
@@ -323,7 +329,7 @@
             Il virtual tour non sostituisce la visita di persona: <strong>la prepara</strong>.
             Fa arrivare al contatto diretto solo chi ha già visto, capito e scelto.
           </p>
-        </div>
+        </details>
       </div>
     </div>
   </section>
@@ -350,8 +356,8 @@
         e quanto costa.
       </p>
       <p class="azioni">
-        <a class="bottone" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A">Scrivimi una mail</a>
-        <a class="bottone secondario" href="https://wa.me/qr/QGXTK7OWWIK5F1" target="_blank" rel="noopener">Contattami su WhatsApp</a>
+        <a class="bottone" href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener">Contattami su WhatsApp</a>
+        <a class="bottone secondario" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A">Scrivimi una mail</a>
       </p>
     </div>
   </section>
@@ -359,26 +365,28 @@
   <!-- ===================== FONTI ===================== -->
   <section id="fonti">
     <div class="riga stretta">
-      <h2>Fonti</h2>
-      <p class="introduzione">Tutte le fonti sono state consultate ad agosto 2026.</p>
-      <ul class="elenco-fonti">
-        <li>Google, <a href="https://www.google.com/streetview/hire/Power-of-maps-listings.pdf">The power of media-rich map listings</a> — studio luglio 2015, n=1.201</li>
-        <li>Google, Business Profile Best Practices Playbook 2026 — dati marcati da Google come <em>Google Internal Data</em>, senza campione né metodologia pubblicati</li>
-        <li>Google, <a href="https://www.google.com/streetview/business/">Street View for Business</a></li>
-        <li>Think with Google, <em>Mobile is the new local guide</em>, 2016</li>
-        <li>AGCM, provvedimento istruttorio A558 — Booking / strutture ricettive italiane, 2024</li>
-        <li>HOTREC / HES-SO Valais, <em>European Hotel Distribution Study 2024</em> — 3.089 hotel, 35 paesi</li>
-        <li>SiteMinder, <em>Changing Traveller Report</em> 2025 e 2026 — 12.000 viaggiatori, 14 mercati</li>
-        <li>TripAdvisor, studio sull'engagement dei ristoranti, 2014 — 25 città</li>
-        <li>TheFork, come gli italiani scelgono il ristorante, 2026 — oltre 1.000 intervistati</li>
-        <li>Cvent / Censuswide, <em>Planner Sourcing Report Europe</em>, 2023 e 2024 — oltre 600 planner</li>
-        <li>Convention Bureau Italia / Centro Studi Turistici di Firenze, <em>Osservatorio Destination Wedding in Italy</em>, dati 2025</li>
-        <li>Cox Automotive, <em>2024 Car Buyer Journey Study</em> — 2.310 acquirenti, USA</li>
-        <li>Gartner, sondaggio sui buyer B2B, giugno 2025 — n=632</li>
-        <li>Booking.com for Business, <em>What does the average business trip really cost</em>, 2024 — campione USA</li>
-        <li>ISTAT, <em>Indagine sui musei e le istituzioni similari</em>, anno 2022; <em>Il patrimonio culturale nelle Aree Interne</em>, febbraio 2025</li>
-        <li>Eurobarometro Flash 499, <em>Attitudes of Europeans towards tourism</em> — 25.714 interviste, ottobre 2021</li>
-      </ul>
+      <details class="richiudibile">
+        <summary><h2>Fonti</h2></summary>
+        <p class="introduzione">Tutte le fonti sono state consultate ad agosto 2026.</p>
+        <ul class="elenco-fonti">
+          <li>Google, <a href="https://www.google.com/streetview/hire/Power-of-maps-listings.pdf">The power of media-rich map listings</a> — studio luglio 2015, n=1.201</li>
+          <li>Google, Business Profile Best Practices Playbook 2026 — dati marcati da Google come <em>Google Internal Data</em>, senza campione né metodologia pubblicati</li>
+          <li>Google, <a href="https://www.google.com/streetview/business/">Street View for Business</a></li>
+          <li>Think with Google, <em>Mobile is the new local guide</em>, 2016</li>
+          <li>AGCM, provvedimento istruttorio A558 — Booking / strutture ricettive italiane, 2024</li>
+          <li>HOTREC / HES-SO Valais, <em>European Hotel Distribution Study 2024</em> — 3.089 hotel, 35 paesi</li>
+          <li>SiteMinder, <em>Changing Traveller Report</em> 2025 e 2026 — 12.000 viaggiatori, 14 mercati</li>
+          <li>TripAdvisor, studio sull'engagement dei ristoranti, 2014 — 25 città</li>
+          <li>TheFork, come gli italiani scelgono il ristorante, 2026 — oltre 1.000 intervistati</li>
+          <li>Cvent / Censuswide, <em>Planner Sourcing Report Europe</em>, 2023 e 2024 — oltre 600 planner</li>
+          <li>Convention Bureau Italia / Centro Studi Turistici di Firenze, <em>Osservatorio Destination Wedding in Italy</em>, dati 2025</li>
+          <li>Cox Automotive, <em>2024 Car Buyer Journey Study</em> — 2.310 acquirenti, USA</li>
+          <li>Gartner, sondaggio sui buyer B2B, giugno 2025 — n=632</li>
+          <li>Booking.com for Business, <em>What does the average business trip really cost</em>, 2024 — campione USA</li>
+          <li>ISTAT, <em>Indagine sui musei e le istituzioni similari</em>, anno 2022; <em>Il patrimonio culturale nelle Aree Interne</em>, febbraio 2025</li>
+          <li>Eurobarometro Flash 499, <em>Attitudes of Europeans towards tourism</em> — 25.714 interviste, ottobre 2021</li>
+        </ul>
+      </details>
     </div>
   </section>
 
@@ -386,14 +394,17 @@
 
 <footer class="piede">
   <div class="riga due-colonne allinea-centro">
-    <div>
-      <p class="nome">Luca Pascucci</p>
-      <p class="recapiti">
-        <a href="https://wa.me/qr/QGXTK7OWWIK5F1" target="_blank" rel="noopener">Contattami su WhatsApp</a>
-        <span aria-hidden="true">·</span>
-        <a href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A">lucapascucci19@gmail.com</a>
-      </p>
-      <p class="ruolo">Realizzazione e pubblicazione di virtual tour 360°</p>
+    <div class="identita">
+      <img src="img/luca-pascucci.jpg" alt="Luca Pascucci" width="511" height="512" loading="lazy">
+      <div>
+        <p class="nome">Luca Pascucci</p>
+        <p class="recapiti">
+          <a href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener">WhatsApp</a>
+          <span aria-hidden="true">·</span>
+          <a href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A">lucapascucci19@gmail.com</a>
+        </p>
+        <p class="ruolo">Realizzazione e pubblicazione di virtual tour 360°</p>
+      </div>
     </div>
     <div class="badge">
       <img src="img/Street-View-Badge.png" alt="Badge Google Maps Street View trusted" width="933" height="1101">
@@ -402,6 +413,14 @@
   </div>
 </footer>
 
+<!-- ===================== BARRA FISSA ===================== -->
+<div class="barra-fissa">
+  <p class="invito">Contattami</p>
+  <a class="bottone secondario piccolo" href="mailto:lucapascucci19@gmail.com?subject=Richiesta%20informazioni%20virtual%20tour&amp;body=Ciao%20Luca%2C%0D%0A%0D%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0D%0A%0D%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0D%0A-%20Dove%20si%20trova%3A%0D%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0D%0A-%20Quando%20vorrei%20pubblicarlo%3A%0D%0A-%20Altro%20che%20ti%20serve%20sapere%3A%0D%0A%0D%0AGrazie%2C%0D%0A" aria-label="Scrivimi una mail">Mail</a>
+  <a class="bottone piccolo" href="https://wa.me/393398469039?text=Ciao%20Luca%2C%0Avorrei%20qualche%20informazione%20su%20un%20virtual%20tour%20360%C2%B0.%0A%0A-%20Che%20spazio%3A%20%28albergo%2C%20ristorante%2C%20showroom%2C%20studio%2C%20museo...%29%0A-%20Dove%20si%20trova%3A%0A-%20Quanti%20ambienti%2C%20all%27incirca%3A%0A-%20Quando%20vorrei%20pubblicarlo%3A%0A" target="_blank" rel="noopener" aria-label="Contattami su WhatsApp">WhatsApp</a>
+</div>
+
 <script src="assets/tours.js" defer></script>
+<script src="assets/menu.js" defer></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
    Struttura del file:
      1. Variabili        2. Impostazioni di base      3. Blocchi riutilizzabili
      4. Testata          5. Sezioni della pagina      6. Piede
-     7. Schermi stretti
+     7. Barra fissa      8. Schermi stretti
    ========================================================================== */
 
 /* -------------------------------------------------- 1. Variabili -------- */
@@ -33,6 +33,7 @@
   --larghezza:  1080px;
   --raggio:     12px;
   --ombra:      0 1px 2px rgba(7, 33, 27, .06), 0 8px 24px rgba(7, 33, 27, .06);
+  --ombra-rilievo: 0 4px 12px rgba(7, 33, 27, .10), 0 16px 40px rgba(7, 33, 27, .18);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +48,7 @@
     --primario-hover: var(--verde-300);
     --su-primario:    #05231C;
     --ombra:          0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    --ombra-rilievo:  0 4px 12px rgba(0, 0, 0, .40), 0 16px 40px rgba(0, 0, 0, .45);
   }
 }
 
@@ -162,10 +164,35 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: .95rem;
 }
 
+/* Blocco richiudibile: chiuso mostra solo il titolo dentro <summary>.
+   Lo usano la nota di trasparenza e le fonti. */
+.richiudibile summary {
+  display: flex; align-items: center; gap: 12px;
+  cursor: pointer; list-style: none;
+}
+.richiudibile summary::-webkit-details-marker { display: none; }
+.richiudibile summary:hover { color: var(--primario); }
+.richiudibile summary > * { margin: 0; }
+/* Freccia: un quadrato di cui si vedono due lati, ruotato. Il margine la
+   ricentra rispetto al titolo, che la rotazione sposta in basso. */
+.richiudibile summary::after {
+  content: ""; width: 10px; height: 10px; margin-top: -6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.richiudibile[open] summary { margin-bottom: 24px; }
+.richiudibile[open] summary::after { margin-top: 4px; transform: rotate(-135deg); }
+
 figure { margin: 0; }
 figure img { border-radius: var(--raggio); }
 figcaption { font-size: .88rem; color: var(--testo-tenue); margin-top: 10px; }
 .incorniciata img { border: 1px solid var(--bordo); box-shadow: var(--ombra); }
+
+/* il ritratto accanto al nome, in testata e nel piede */
+.marchio img, .piede .identita img {
+  border-radius: 50%; object-fit: cover; flex: none;
+}
 
 /* ------------------------------------------------- 4. Testata ----------- */
 
@@ -179,9 +206,40 @@ figcaption { font-size: .88rem; color: var(--testo-tenue); margin-top: 10px; }
   display: flex; align-items: center; justify-content: space-between;
   gap: 20px; min-height: 70px; flex-wrap: wrap;
 }
-.marchio { text-decoration: none; color: var(--testo); line-height: 1.25; }
+.marchio {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; color: var(--testo); line-height: 1.25;
+}
+.marchio img { width: 42px; height: 42px; }
 .marchio strong { display: block; font-size: 1.05rem; }
-.marchio span { font-size: .82rem; color: var(--testo-tenue); }
+.marchio .testo span { font-size: .82rem; color: var(--testo-tenue); }
+
+/* Compare solo sugli schermi stretti (blocco 8), dove apre e chiude la nav. */
+.apri-menu {
+  display: none;
+  width: 44px; height: 44px; padding: 0;
+  align-items: center; justify-content: center;
+  background: none; border: 0; border-radius: 10px;
+  color: var(--testo); cursor: pointer;
+}
+.apri-menu[aria-expanded="true"] { color: var(--primario); }
+.apri-menu .tratti,
+.apri-menu .tratti::before,
+.apri-menu .tratti::after {
+  display: block; width: 22px; height: 2px; border-radius: 2px;
+  background: currentColor;
+}
+/* I due tratti esterni partono dal centro e si scostano di 5px sopra e sotto. */
+.apri-menu .tratti::before,
+.apri-menu .tratti::after { content: ""; position: relative; }
+.apri-menu .tratti::before { top: -7px; }
+.apri-menu .tratti::after  { top: 5px; }
+
+/* Aperto: il tratto centrale sparisce e gli altri due si sovrappongono al
+   centro, incrociati. */
+.apri-menu[aria-expanded="true"] .tratti { background: transparent; }
+.apri-menu[aria-expanded="true"] .tratti::before { top: 0; transform: rotate(45deg); }
+.apri-menu[aria-expanded="true"] .tratti::after  { top: -2px; transform: rotate(-45deg); }
 
 .testata nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
 .testata nav a { color: var(--testo-tenue); text-decoration: none; font-size: .95rem; }
@@ -241,8 +299,12 @@ section.alternata { background: var(--superficie); border-block: 1px solid var(-
 
 .piede {
   background: var(--verde-950); color: var(--verde-100);
-  padding: 48px 0; border-top: 1px solid var(--bordo);
+  border-top: 1px solid var(--bordo);
+  /* sotto, lo spazio coperto dalla barra fissa più il respiro del padding */
+  padding: 48px 0 124px;
 }
+.piede .identita { display: flex; align-items: center; gap: 20px; }
+.piede .identita img { width: 84px; height: 84px; }
 .piede .nome { font-size: 1.35rem; font-weight: 700; margin-bottom: 4px; }
 .piede .recapiti { margin-bottom: 6px; }
 .piede .recapiti a { color: var(--verde-300); }
@@ -264,7 +326,26 @@ section.alternata { background: var(--superficie); border-block: 1px solid var(-
   }
 }
 
-/* ------------------------------------------ 7. Schermi stretti ---------- */
+/* --------------------------------------------- 7. Barra fissa ---------- */
+
+/* Una pillola staccata dai bordi e centrata: l'ombra marcata la stacca dalla
+   pagina, come un oggetto appoggiato sopra. Lo spazio che occupa è il
+   padding-bottom del piede. */
+.barra-fissa {
+  position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+  z-index: 6;
+  display: flex; align-items: center; gap: 10px;
+  max-width: calc(100% - 32px);
+  padding: 10px;
+  border-radius: 999px;
+  background: var(--superficie);
+  border: 1px solid var(--bordo);
+  box-shadow: var(--ombra-rilievo);
+}
+.barra-fissa .invito { margin: 0 4px 0 12px; font-weight: 600; font-size: .95rem; }
+.barra-fissa .bottone { border-radius: 999px; }
+
+/* ------------------------------------------ 8. Schermi stretti ---------- */
 
 @media (max-width: 860px) {
   h1 { font-size: 2.1rem; }
@@ -273,13 +354,22 @@ section.alternata { background: var(--superficie); border-block: 1px solid var(-
 
   .due-colonne, .tre-colonne, .apertura .due-colonne { grid-template-columns: 1fr; gap: 28px; }
 
-  /* la testata a due righe occuperebbe troppo schermo: qui scorre via */
-  html { scroll-padding-top: 12px; }
-  .testata { position: static; }
-  .testata .riga { min-height: 0; padding-block: 12px; }
-  .testata nav { gap: 14px; }
-  .testata nav a { font-size: .9rem; }
+  /* La testata resta in alto: chiusa occupa una riga sola, e il bottone del
+     menu è raggiungibile da qualsiasi punto della pagina. */
+  .testata .riga { min-height: 0; padding-block: 10px; }
+  .apri-menu { display: flex; }
 
+  .testata nav { display: none; }
+  /* Aperta, la nav va a capo sotto marchio e bottone e diventa una colonna. */
+  .apri-menu[aria-expanded="true"] + nav {
+    display: flex; flex-direction: column; align-items: stretch;
+    flex-basis: 100%; gap: 2px; padding-bottom: 8px;
+  }
+  .testata nav a { padding: 8px 0; }
+  .testata nav a.bottone { margin-top: 8px; text-align: center; }
+
+  .marchio img { width: 38px; height: 38px; }
+  .piede .identita img { width: 64px; height: 64px; }
   .piede .badge { justify-content: flex-start; }
 }
 

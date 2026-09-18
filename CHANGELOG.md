@@ -10,6 +10,20 @@ sono numeri nudi, senza prefisso `v`.
 
 ### Changed
 
+- Su schermi stretti il menu delle sezioni si raccoglie in un bottone a tre
+  tratti e si apre in colonna sotto il marchio; aperto, il bottone diventa una
+  X. La testata torna a restare in alto anche da telefono, così il menu è
+  raggiungibile da qualsiasi punto della pagina.
+- Contatti: WhatsApp è ora il bottone pieno e sta per primo, "Scrivimi una
+  mail" lo segue come bottone secondario.
+- Anche WhatsApp arriva con il messaggio già scritto, la stessa traccia di
+  domande della mail: il link usa il numero (`wa.me/393398469039`) invece del
+  codice QR, l'unico formato in cui il testo precompilato è previsto.
+- In testata la voce di menu "Contatti" è diventata "Contattami"; nel piede il
+  link a WhatsApp si chiama solo "WhatsApp".
+- "Fonti" e "Una nota di trasparenza" si aprono e si chiudono: da chiuse
+  mostrano solo il titolo, il testo resta a un clic di distanza. Entrambe usano
+  la stessa classe `.richiudibile`.
 - L'apertura si presenta con una domanda invece che con una descrizione: "Chi
   ti cerca online, cosa vede del tuo spazio?", e la riga sotto risponde
   raccontando in una frase cos'è un virtual tour. Un solo invito, "Scopri cos'è
@@ -34,6 +48,12 @@ sono numeri nudi, senza prefisso `v`.
 
 ### Added
 
+- Una barra sempre presente a fondo schermo, "Contattami" e i due recapiti con
+  WhatsApp in evidenza: una pillola centrata, staccata dai bordi e in rilievo
+  sulla pagina.
+- Il ritratto accanto al nome, in testata e nel piede.
+- `assets/menu.js`, le poche righe che aprono e chiudono il menu sugli schermi
+  stretti.
 - `CHANGELOG.md`, questo file.
 - `.claude/rules/` con architettura, convenzioni, gotchas e workflow git.
 - Sezioni "Contatti sulla pagina", "Versioni" e "Documentazione per Claude Code"
