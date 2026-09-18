@@ -1,0 +1,287 @@
+/* ==========================================================================
+   Virtual tour 360° — foglio di stile unico.
+   Palette "verde Street View", ripresa da media/brand/tokens.css del progetto.
+   Struttura del file:
+     1. Variabili        2. Impostazioni di base      3. Blocchi riutilizzabili
+     4. Testata          5. Sezioni della pagina      6. Piede
+     7. Schermi stretti
+   ========================================================================== */
+
+/* -------------------------------------------------- 1. Variabili -------- */
+
+:root {
+  --verde-100: #ECFDF5;
+  --verde-300: #A7F3D0;
+  --verde-400: #34D399;
+  --verde-500: #10B981;
+  --verde-600: #0E9F6E;  /* colore d'azione */
+  --verde-700: #0A6E56;
+  --verde-800: #065F46;
+  --verde-950: #07211B;
+
+  --fondo:        #F5F9F7;
+  --superficie:   #FFFFFF;
+  --bordo:        #DDE9E5;
+  --testo:        #0B2B23;
+  --testo-tenue:  #5B7A72;
+
+  --primario:        var(--verde-600);
+  --primario-hover:  var(--verde-500);
+  --su-primario:     #FFFFFF;
+  --anello-focus:    0 0 0 3px rgba(14, 159, 110, .32);
+
+  --larghezza:  1080px;
+  --raggio:     12px;
+  --ombra:      0 1px 2px rgba(7, 33, 27, .06), 0 8px 24px rgba(7, 33, 27, .06);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo:       #07211B;
+    --superficie:  #0C2E26;
+    --bordo:       #17453A;
+    --testo:       #ECFDF5;
+    --testo-tenue: #8FB5AA;
+
+    --primario:       var(--verde-400);
+    --primario-hover: var(--verde-300);
+    --su-primario:    #05231C;
+    --ombra:          0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  }
+}
+
+/* --------------------------------------- 2. Impostazioni di base -------- */
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--testo);
+  background: var(--fondo);
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .4em; font-weight: 700; }
+h1 { font-size: 2.6rem; letter-spacing: -.02em; }
+h2 { font-size: 1.9rem; letter-spacing: -.01em; }
+h3 { font-size: 1.1rem; }
+
+p { margin: 0 0 1em; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--verde-700); }
+@media (prefers-color-scheme: dark) { a { color: var(--verde-300); } }
+
+img { max-width: 100%; height: auto; display: block; }
+
+:focus-visible { outline: 0; box-shadow: var(--anello-focus); border-radius: 6px; }
+
+.salta {
+  position: absolute; left: -9999px;
+  background: var(--primario); color: var(--su-primario);
+  padding: 10px 16px; border-radius: 0 0 var(--raggio) 0;
+}
+.salta:focus { left: 0; top: 0; z-index: 10; }
+
+/* ------------------------------ 3. Blocchi riutilizzabili --------------- */
+
+.riga { max-width: var(--larghezza); margin: 0 auto; padding: 0 20px; }
+.riga.stretta { max-width: 760px; }
+.riga.centrata { text-align: center; }
+
+.due-colonne { display: grid; gap: 40px; grid-template-columns: 1fr 1fr; align-items: center; }
+.due-colonne.allinea-alto { align-items: start; }
+.due-colonne.allinea-centro { align-items: center; }
+.tre-colonne { display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); }
+
+.griglia {
+  display: grid; gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.scheda {
+  display: flex; flex-direction: column;   /* tiene la fonte in fondo alla scheda */
+  background: var(--superficie);
+  border: 1px solid var(--bordo);
+  border-radius: var(--raggio);
+  padding: 22px 24px;
+}
+.scheda .fonte { margin-top: auto; padding-top: 14px; }
+.scheda h3 { color: var(--verde-800); }
+@media (prefers-color-scheme: dark) { .scheda h3 { color: var(--verde-300); } }
+
+.riquadro {
+  background: var(--verde-100);
+  border-radius: var(--raggio);
+  padding: 24px 26px;
+}
+.riquadro ul { margin: 0 0 1em; padding-left: 20px; }
+.riquadro li { margin-bottom: 6px; }
+@media (prefers-color-scheme: dark) {
+  .riquadro { background: var(--superficie); border: 1px solid var(--bordo); }
+}
+
+.bottone {
+  display: inline-block;
+  background: var(--primario); color: var(--su-primario);
+  padding: 13px 24px; border-radius: 10px;
+  font-weight: 600; text-decoration: none;
+}
+.bottone:hover { background: var(--primario-hover); }
+.bottone.secondario {
+  background: transparent; color: var(--testo);
+  border: 1px solid var(--bordo);
+}
+.bottone.secondario:hover { border-color: var(--primario); color: var(--primario); }
+.bottone.piccolo { padding: 8px 16px; font-size: .95rem; }
+
+.azioni { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.riga.centrata .azioni { justify-content: center; }
+
+.occhiello {
+  font-size: .82rem; letter-spacing: .12em; text-transform: uppercase;
+  font-weight: 700; color: var(--verde-700); margin-bottom: 10px;
+}
+@media (prefers-color-scheme: dark) { .occhiello { color: var(--verde-400); } }
+
+.sommario { font-size: 1.2rem; color: var(--testo-tenue); }
+.introduzione { color: var(--testo-tenue); max-width: 60ch; margin-bottom: 32px; }
+.fonte { font-size: .85rem; color: var(--testo-tenue); margin-top: 12px; }
+
+.nota {
+  border-left: 3px solid var(--bordo);
+  padding-left: 16px;
+  color: var(--testo-tenue);
+  font-size: .95rem;
+}
+
+figure { margin: 0; }
+figure img { border-radius: var(--raggio); }
+figcaption { font-size: .88rem; color: var(--testo-tenue); margin-top: 10px; }
+.incorniciata img { border: 1px solid var(--bordo); box-shadow: var(--ombra); }
+
+/* ------------------------------------------------- 4. Testata ----------- */
+
+.testata {
+  position: sticky; top: 0; z-index: 5;
+  background: color-mix(in srgb, var(--fondo) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--bordo);
+}
+.testata .riga {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px; min-height: 70px; flex-wrap: wrap;
+}
+.marchio { text-decoration: none; color: var(--testo); line-height: 1.25; }
+.marchio strong { display: block; font-size: 1.05rem; }
+.marchio span { font-size: .82rem; color: var(--testo-tenue); }
+
+.testata nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.testata nav a { color: var(--testo-tenue); text-decoration: none; font-size: .95rem; }
+.testata nav a:hover { color: var(--primario); }
+.testata nav a.bottone { color: var(--su-primario); }
+
+/* --------------------------------------- 5. Sezioni della pagina -------- */
+
+section { padding: 72px 0; }
+section.alternata { background: var(--superficie); border-block: 1px solid var(--bordo); }
+
+.apertura { padding-top: 64px; }
+.apertura h1 { margin-bottom: 18px; }
+.apertura .due-colonne { grid-template-columns: 1.1fr 1fr; }
+
+.fascia-numeri { background: var(--verde-950); color: var(--verde-100); padding: 48px 0; }
+.fascia-numeri .numero strong {
+  display: block; font-size: 2.6rem; font-weight: 700;
+  color: var(--verde-400); line-height: 1.1; margin-bottom: 8px;
+}
+.fascia-numeri .numero p { margin: 0; }
+.fascia-numeri .fonte { color: var(--verde-300); opacity: .8; margin-top: 8px; }
+
+.passi {
+  list-style: none; counter-reset: passo;
+  display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  margin: 0 0 48px; padding: 0;
+}
+.passi li { counter-increment: passo; }
+.passi li::before {
+  content: counter(passo);
+  display: flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; margin-bottom: 12px;
+  border-radius: 50%;
+  background: var(--primario); color: var(--su-primario);
+  font-weight: 700;
+}
+.passi p { color: var(--testo-tenue); font-size: .95rem; }
+
+/* tour pubblicati */
+.tour { padding: 0; overflow: hidden; }
+.tour img { aspect-ratio: 16 / 9; object-fit: cover; width: 100%; }
+.tour .testo { display: flex; flex-direction: column; flex: 1; padding: 20px 24px; }
+.tour h3 { margin-bottom: 2px; }
+.tour .luogo { font-size: .85rem; color: var(--testo-tenue); margin-bottom: 10px; }
+.tour .apri { margin-top: auto; padding-top: 14px; font-weight: 600; text-decoration: none; }
+.tour .apri::after { content: " →"; }
+
+.vuoto {
+  border: 1px dashed var(--bordo); border-radius: var(--raggio);
+  padding: 48px 24px; text-align: center; color: var(--testo-tenue);
+}
+
+.elenco-fonti { margin: 0; padding-left: 20px; font-size: .9rem; color: var(--testo-tenue); }
+.elenco-fonti li { margin-bottom: 8px; }
+
+/* --------------------------------------------------- 6. Piede ---------- */
+
+.piede {
+  background: var(--verde-950); color: var(--verde-100);
+  padding: 48px 0; border-top: 1px solid var(--bordo);
+}
+.piede .nome { font-size: 1.35rem; font-weight: 700; margin-bottom: 4px; }
+.piede .recapiti { margin-bottom: 6px; }
+.piede .recapiti a { color: var(--verde-300); }
+.piede .ruolo { font-size: .9rem; color: var(--verde-300); opacity: .8; margin: 0; }
+
+.piede .badge { display: flex; align-items: center; gap: 20px; }
+.piede .badge img {
+  width: 110px; flex: none;
+  background: #FFFFFF; border-radius: 10px; padding: 10px;
+}
+.piede .badge p { font-size: .85rem; color: var(--verde-300); margin: 0; }
+
+/* Su fondo scuro la fascia dei numeri e il piede userebbero lo stesso colore
+   dello sfondo della pagina: qui si staccano con superficie e bordi. */
+@media (prefers-color-scheme: dark) {
+  .fascia-numeri, .piede {
+    background: var(--superficie);
+    border-block: 1px solid var(--bordo);
+  }
+}
+
+/* ------------------------------------------ 7. Schermi stretti ---------- */
+
+@media (max-width: 860px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.6rem; }
+  section { padding: 56px 0; }
+
+  .due-colonne, .tre-colonne, .apertura .due-colonne { grid-template-columns: 1fr; gap: 28px; }
+
+  /* la testata a due righe occuperebbe troppo schermo: qui scorre via */
+  html { scroll-padding-top: 12px; }
+  .testata { position: static; }
+  .testata .riga { min-height: 0; padding-block: 12px; }
+  .testata nav { gap: 14px; }
+  .testata nav a { font-size: .9rem; }
+
+  .piede .badge { justify-content: flex-start; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
