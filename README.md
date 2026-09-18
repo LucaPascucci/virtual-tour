@@ -26,7 +26,8 @@ scelta deliberata, non un dettaglio di stile.
 Si modifica solo `assets/tours.json`, che contiene una lista di oggetti. Finché
 la lista è vuota (`[]`) dei tour non c'è traccia nella pagina: spariscono insieme la
 sezione "Tour pubblicati", la voce nel menu in testata e il bottone "Guarda i tour
-pubblicati" in apertura. Compaiono da soli appena il JSON contiene almeno un tour.
+pubblicati" in fondo a "Cos'è un virtual tour". Compaiono da soli appena il JSON
+contiene almeno un tour.
 
 ```json
 [

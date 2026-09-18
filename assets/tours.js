@@ -1,6 +1,6 @@
 /* Costruisce le schede della sezione "Tour pubblicati" leggendo tours.json.
    Tutto ciò che rimanda alla sezione — la sezione stessa, la voce di menu, il
-   bottone dell'apertura — è marcato data-solo-con-tour nell'HTML e resta nascosto
+   bottone in fondo a "Cos'è" — è marcato data-solo-con-tour nell'HTML e resta nascosto
    finché il JSON non contiene almeno un tour: per pubblicare si modifica solo
    tours.json, qui non serve mettere le mani. */
 

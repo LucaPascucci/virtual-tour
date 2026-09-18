@@ -10,9 +10,17 @@ sono numeri nudi, senza prefisso `v`.
 
 ### Changed
 
+- L'apertura si presenta con una domanda invece che con una descrizione: "Chi
+  ti cerca online, cosa vede del tuo spazio?", e la riga sotto risponde
+  raccontando in una frase cos'è un virtual tour. Un solo invito, "Scopri cos'è
+  un virtual tour", che porta alla spiegazione poco più giù: l'apertura spiega
+  prima di chiedere. L'invito a farsi fare un preventivo resta in testata e
+  nella sezione "Parliamone".
+- Il bottone "Guarda i tour pubblicati" si è spostato dall'apertura alla fine di
+  "Cos'è un virtual tour", dove la curiosità di vederne uno nasce davvero.
 - I tour compaiono da soli: la sezione "Tour pubblicati", la voce nel menu in
-  testata e il bottone "Guarda i tour pubblicati" in apertura restano nascosti
-  finché `assets/tours.json` non contiene almeno un tour. Ogni rimando è marcato
+  testata e il bottone "Guarda i tour pubblicati" restano nascosti finché
+  `assets/tours.json` non contiene almeno un tour. Ogni rimando è marcato
   `hidden data-solo-con-tour` in HTML e viene scoperto da `assets/tours.js`.
 - Contatti: al posto del numero di telefono (`tel:`) c'è un link a WhatsApp, e
   la mail arriva con oggetto e corpo già precompilati — una traccia di domande

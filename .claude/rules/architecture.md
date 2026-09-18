@@ -42,7 +42,7 @@ string; `pulisci()` fa l'escape di `& < > "` perché i valori del JSON finiscono
 dentro l'HTML.
 
 Ogni elemento che rimanda ai tour — la sezione `#tour`, la voce di menu in
-testata, il bottone "Guarda i tour pubblicati" in apertura — porta in HTML
+testata, il bottone "Guarda i tour pubblicati" in fondo a "Cos'è" — porta in HTML
 `hidden data-solo-con-tour`. Il JS li scopre tutti insieme (`elemento.hidden =
 false`) solo dopo aver disegnato almeno una scheda. Lista vuota, JSON mancante o
 malformato → resta tutto nascosto, senza messaggi d'errore: meglio una sezione
